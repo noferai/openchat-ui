@@ -28,6 +28,9 @@ export const ModelSelect = () => {
 
   return (
     <div className="flex flex-col">
+      <div className="font-bold text-white bg-black p-2 mb-4">
+        NOTE: If chat fails when you start using, clear site data. PLEASE EXPORT THE CHAT HISTORY FIRST AS IT WILL BE LOST WHEN CLEARING THE DATA.
+      </div>
       <label className="mb-2 text-left text-neutral-700 dark:text-neutral-400">
         {t('Model')}
       </label>
