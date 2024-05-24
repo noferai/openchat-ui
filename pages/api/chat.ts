@@ -23,14 +23,15 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const tokenizer = OpenAITokenizers[model.id as OpenAIModelID];
-    const prompt_tokens = tokenizer.encode(promptToSend, false);
+    const tokenizer_options = {bos: false, eos: false};
+    const prompt_tokens = tokenizer.encode(promptToSend, tokenizer_options);
 
     let tokenCount = prompt_tokens.length;
     let messagesToSend: Message[] = [];
 
     for (let i = messages.length - 1; i >= 0; i--) {
       const message = messages[i];
-      const tokens = tokenizer.encode(message.content, false);
+      const tokens = tokenizer.encode(message.content, tokenizer_options);
 
       if (tokenCount + tokens.length + 768 > model.tokenLimit) {
         break;
