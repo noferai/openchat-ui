@@ -12,7 +12,7 @@ export interface OpenAIModel {
 export enum OpenAIModelID {
   // OpenChat
   OPENCHAT_3_2_MISTRAL = 'openchat_v3.2_mistral',
-  OPENCHAT_3_6 = 'openchat_3.6'
+  OPENCHAT_3_6 = 'openchat_3.5'
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
@@ -22,14 +22,14 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   // OpenChat
   [OpenAIModelID.OPENCHAT_3_2_MISTRAL]: {
     id: OpenAIModelID.OPENCHAT_3_2_MISTRAL,
-    name: 'OpenChat 3.5 (latest)',
+    name: 'OpenChat 3.2 (mistral)',
     maxLength: 8192 * 3,
     tokenLimit: 8192,
   },
 
   [OpenAIModelID.OPENCHAT_3_6]: {
     id: OpenAIModelID.OPENCHAT_3_6,
-    name: 'OpenChat 3.6 (latest)',
+    name: 'OpenChat 3.5',
     maxLength: 8192 * 3,
     tokenLimit: 8192,
   }
